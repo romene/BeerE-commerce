@@ -1,11 +1,18 @@
 import React from 'react'
+import { Jumbotron, Container } from 'reactstrap';
 
 export const Hero = () => {
     return (
         <div>
-            <h1>Ola from Hero</h1>
+            <Jumbotron fluid>
+                <Container fluid>
+                   
+                </Container>
+            </Jumbotron>
         </div>
     )
 }
+
+
 
 
