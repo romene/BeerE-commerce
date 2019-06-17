@@ -5,11 +5,10 @@ import {
     Navbar,
     NavbarToggler,
     NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
 } from 'reactstrap';
+
 import { IoIosBeer } from "react-icons/io";
+import MenuNavbar from "./MenuNavbar";
 
 
 export class NavBar extends Component {
@@ -33,14 +32,7 @@ export class NavBar extends Component {
                     <NavbarBrand href="/"><IoIosBeer /></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="mx-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/">Index</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/">Beers</NavLink>
-                            </NavItem>
-                        </Nav>
+                        <MenuNavbar/>
                     </Collapse>
                 </Navbar>
             </div>
