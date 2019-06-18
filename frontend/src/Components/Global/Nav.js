@@ -7,6 +7,7 @@ import {
     NavbarBrand,
 } from 'reactstrap';
 
+
 import { IoIosBeer } from "react-icons/io";
 import MenuNavbar from "./MenuNavbar";
 

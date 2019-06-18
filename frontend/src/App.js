@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { Provider } from 'react-redux'
+import store from './store/store'
 
 // import components for routes
 import  IndexPage  from "./Pages/IndexPage";
@@ -14,13 +16,13 @@ import { Hero } from './Components/Global/Hero';
 
 function App() {
   return (
-    <React.Fragment>
+    <Provider store={store}>
       <AppRouter>
         <div className="App">
           <IndexPage />
         </div>
       </AppRouter>
-    </React.Fragment>
+    </Provider>
     
   );
 }
