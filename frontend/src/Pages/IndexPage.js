@@ -7,12 +7,16 @@ import { connect } from "react-redux";
 import { FeaturedBeers} from '../Components/FeaturedBeers'
 
 class IndexPage extends Component {
+    
     componentDidMount(){
         this.props.fetchBeers()
+
+        
     }
     render() {
+        console.log("State in Store", store.getState().beerState)
         console.log(this.props.beers)
-        console.log("State in Store", store.getState())
+        
         return (
             <Fragment>
                 <FeaturedBeers/>

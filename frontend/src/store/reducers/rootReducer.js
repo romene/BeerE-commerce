@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import beerReducer from './BeerReducer'
+import beerState from './BeerReducer'
 
 
 export default combineReducers({
-    beerReducer,
+    beerState,
 })

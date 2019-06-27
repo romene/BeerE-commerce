@@ -1,30 +1,37 @@
 // //import everything from actions.js
 // import * as actions from '../actions/actions'
-
-import { FETCH_BEERS } from "../actions/actions";
-
+import { FETCH_BEERS, ADD_BEER, DELETE_BEER } from "../actions/actions";
 
 
-const initialState = {
-    beers: [
-        { id: 1, name: 'Skol', tagline: 'Desce Redondo' },
-        { id: 2, name: 'Brahma', tagline: 'A numero 1' },
-    ]
+
+export const initialState = {
+    beers: [],
+    FavoritesBeer: [],
+    FeaturedBeers: []
 }
 
- const beerReducer = ( state = initialState, action ) => {
+ const beerState = ( state = initialState, action ) => {
     switch (action.type) {
         case FETCH_BEERS:
             return {
-                ...state,
-                beers: [...state.beers,
-                    { id: 2, name: 'Bavaria', tagline: 'A numero 0' },
-                ]
+                beers: action.payload
                   
+                }
+        case ADD_BEER:
+            return {
+                ...state,
+                beers: [...state.beers,{...action.id}]
             }
+        case DELETE_BEER:
+            console.log("Bahia minha vida Deleted", action)
+            const newState = state.beers.filter(item => item.id !== action.id)
+            return {
+                ...state,
+                beers: newState
+            }    
         default:
             return state
     }
 }
 
-export default beerReducer
+export default beerState
